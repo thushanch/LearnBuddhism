@@ -144,7 +144,11 @@ Each phase is a board plus a chapter or two, in the house style: one insight per
 screen, Pali and Sinhala on everything, everyday examples, honest layer labels, and
 something to press.
 
-### Phase 1 — The path, complete  ·  **DONE** ()
+### Phase 1 — The path, complete  ·  **SHIPPED** at `#/path-board`
+
+*Landed as one board with three sections rather than three separate boards, to keep
+the rail short. The quality tally is computed from the item data rather than written
+down, so the arithmetic cannot drift out of agreement with the lists.*
 
 **Board: the thirty-seven.** A single graph. Seven sets as seven columns, fourteen
 qualities as nodes, edges showing where each quality reappears. Click *sati* and it
