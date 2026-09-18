@@ -220,18 +220,24 @@ function route() {
 
 /* ---------- keyboard chapter paging ---------- */
 
+// Bracket keys, or alt+arrow. Bare arrows are deliberately left alone: on a
+// long page they are how people scroll, and hijacking them makes the page
+// lurch a chapter at a time.
 document.addEventListener("keydown", (e) => {
-  if (e.target.matches("input, textarea, select")) return;
-  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.target instanceof Element && e.target.closest("input, textarea, select")) return;
+  if (e.metaKey || e.ctrlKey) return;
+
+  const back = e.key === "[" || (e.altKey && e.key === "ArrowLeft");
+  const fwd = e.key === "]" || (e.altKey && e.key === "ArrowRight");
+  if (!back && !fwd) return;
 
   const hash = location.hash.replace(/^#\/?/, "");
   const i = CHAPTERS.findIndex((c) => c.id === hash);
+  if (i === -1) return;
 
-  if (e.key === "ArrowRight" && i < CHAPTERS.length - 1) {
-    location.hash = `#/${CHAPTERS[i + 1].id}`;
-  } else if (e.key === "ArrowLeft" && i > 0) {
-    location.hash = `#/${CHAPTERS[i - 1].id}`;
-  }
+  e.preventDefault();
+  if (fwd && i < CHAPTERS.length - 1) location.hash = "#/" + CHAPTERS[i + 1].id;
+  else if (back && i > 0) location.hash = "#/" + CHAPTERS[i - 1].id;
 });
 
 /* ---------- go ---------- */
