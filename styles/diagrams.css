@@ -299,6 +299,8 @@
   align-items: baseline;
 }
 .gloss__item:first-child { border-top: 1px solid var(--line); }
+/* an author display value outranks the UA rule for [hidden] */
+.gloss__item[hidden] { display: none; }
 .gloss__pali { font-style: italic; font-weight: 500; color: var(--grow); }
 .gloss__lit { font-size: 0.82rem; color: var(--text-faint); display: block; font-style: normal; }
 .gloss__sys { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); }
