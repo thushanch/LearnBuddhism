@@ -1,5 +1,7 @@
 # Escaping the System
 
+**Live: <https://thushanch.github.io/LearnBuddhism/>**
+
 A systems-engineering reading of early Buddhism. One machine, drawn once, then taken
 apart over fifteen short chapters — with the Pali, the Sinhala, and a worked everyday
 example for every part of it.
@@ -175,8 +177,8 @@ named.
 
 ## Deploying
 
-`.github/workflows/pages.yml` publishes the site to GitHub Pages, but it is
-**manual-only** and Pages is not yet enabled here — a private repository needs a paid
-plan to serve Pages. To publish: either make the repo public or upgrade the plan, set
-*Settings → Pages → Source* to **GitHub Actions**, then run the workflow from the
-Actions tab. Nothing needs to be built; the artifact is the repository as-is.
+The site is live at <https://thushanch.github.io/LearnBuddhism/>.
+
+`.github/workflows/pages.yml` publishes it on every push to `main`, and can also be run
+by hand from the Actions tab. Nothing is built — the artifact is the repository as it
+stands, which is the point of keeping the site dependency-free.
