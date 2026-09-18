@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="rendered">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escaping the System — Buddhism read as an engineering report</title>
+<meta name="description" content="A systems-engineering reading of core Buddhist ideas: the loop you are running in, the five subsystems, the dependency chain, the one cuttable edge, and what the exit actually means.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#14416B">
+
+<link rel="icon" href="brand/mark.png" type="image/png">
+<link rel="apple-touch-icon" href="brand/mark.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap">
+
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/app.css">
+<link rel="stylesheet" href="styles/diagrams.css">
+<link rel="stylesheet" href="styles/machine.css">
+
+<script>
+  // Set the theme before first paint so there is no flash.
+  try {
+    var t = localStorage.getItem("lb-theme");
+    if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "source" : "rendered";
+    document.documentElement.dataset.theme = t;
+  } catch (e) { /* storage can be blocked; the default in the markup stands */ }
+</script>
+</head>
+
+<body>
+<a class="visually-hidden" href="#main">Skip to content</a>
+
+<div class="app" id="app">
+
+  <button class="rail__toggle" id="railToggle" aria-expanded="false" aria-controls="rail">
+    <span aria-hidden="true">☰</span> System map
+  </button>
+
+  <nav class="rail" id="rail" aria-label="Chapters">
+    <div class="rail__head">
+      <a class="rail__brand" href="#/">
+        <img class="rail__mark" src="brand/mark.png" alt="">
+        <span>
+          <span class="rail__title">Escaping the System</span>
+          <span class="rail__sub">v1.0 · field notes</span>
+        </span>
+      </a>
+    </div>
+    <div class="rail__scroll" id="railLinks"></div>
+    <div class="rail__foot">
+      <button class="theme-toggle" id="themeToggle" aria-live="polite">
+        <span class="theme-toggle__dot" aria-hidden="true"></span>
+        <span id="themeLabel">Rendered</span>
+      </button>
+      <span class="rail__prog" id="railProg"></span>
+    </div>
+  </nav>
+
+  <button class="scrim" id="scrim" aria-label="Close system map" tabindex="-1"></button>
+
+  <main class="main" id="main" tabindex="-1"></main>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

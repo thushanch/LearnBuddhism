@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Design tokens — Thushan Chamika brand
+   Deep Ocean Blue leads. Neutrals hold the space. Green and water-blue accent.
+   Two themes: "rendered" (light, the world as it appears) and
+               "source"   (dark, the system underneath).
+   ========================================================================== */
+
+:root {
+  /* Brand palette — fixed values, never redefined */
+  --brand-deep:     #14416B;
+  --brand-water:    #1E78B0;
+  --brand-green:    #2E6B4F;
+  --brand-paper:    #F6F7F4;
+  --brand-ink:      #1C2A33;
+  --brand-mid:      #2E6FA3;
+  --brand-pale:     #9FC4E6;
+  --brand-contour:  #C9CEC7;
+
+  /* Semantic tokens — light / "rendered" */
+  --bg:             #F6F7F4;
+  --bg-sunken:      #EEF0EC;
+  --surface:        #FFFFFF;
+  --surface-alt:    #F1F3EF;
+  --line:           #DDE1DA;
+  --line-strong:    #C9CEC7;
+
+  --text:           #1C2A33;
+  --text-soft:      #4C5C67;
+  --text-faint:     #78868F;
+
+  --accent:         #14416B;
+  --accent-soft:    #1E78B0;
+  --accent-wash:    rgba(20, 65, 107, 0.07);
+  --accent-line:    rgba(20, 65, 107, 0.22);
+
+  --grow:           #2E6B4F;
+  --grow-wash:      rgba(46, 107, 79, 0.09);
+
+  --code-bg:        #101E29;
+  --code-text:      #DCE6EC;
+  --code-dim:       #7C8F9C;
+  --code-key:       #9FC4E6;
+  --code-str:       #8FC4A8;
+
+  /* Typography */
+  --font-display: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --font-body:    "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono:    ui-monospace, "SFMono-Regular", "Cascadia Mono", "Consolas", monospace;
+
+  --step--1: clamp(0.78rem, 0.76rem + 0.10vw, 0.84rem);
+  --step-0:  clamp(1.00rem, 0.97rem + 0.15vw, 1.09rem);
+  --step-1:  clamp(1.20rem, 1.13rem + 0.35vw, 1.42rem);
+  --step-2:  clamp(1.50rem, 1.36rem + 0.70vw, 2.00rem);
+  --step-3:  clamp(1.95rem, 1.68rem + 1.35vw, 2.90rem);
+  --step-4:  clamp(2.40rem, 1.90rem + 2.50vw, 4.20rem);
+
+  /* Space — generous margins are part of the design */
+  --s1: 0.25rem;  --s2: 0.5rem;   --s3: 0.75rem;  --s4: 1rem;
+  --s5: 1.5rem;   --s6: 2rem;     --s7: 3rem;     --s8: 4.5rem;
+  --s9: 7rem;
+
+  --radius:    10px;
+  --radius-sm: 6px;
+  --measure:   66ch;
+  --rail:      264px;
+
+  --ease: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark / "source" theme */
+:root[data-theme="source"] {
+  --bg:             #0D1922;
+  --bg-sunken:      #0A141C;
+  --surface:        #13242F;
+  --surface-alt:    #172B38;
+  --line:           #21394A;
+  --line-strong:    #2E5068;
+
+  --text:           #E4EBEF;
+  --text-soft:      #A8BAC6;
+  --text-faint:     #6F8593;
+
+  --accent:         #9FC4E6;
+  --accent-soft:    #6FA8D6;
+  --accent-wash:    rgba(159, 196, 230, 0.09);
+  --accent-line:    rgba(159, 196, 230, 0.26);
+
+  --grow:           #63AE8A;
+  --grow-wash:      rgba(99, 174, 138, 0.12);
+
+  --code-bg:        #0A141C;
+  --code-text:      #DCE6EC;
+  --code-dim:       #64798A;
+
+  --brand-contour:  #24404F;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

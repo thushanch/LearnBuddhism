@@ -1,0 +1,285 @@
+/* ==========================================================================
+   machine.css — the one-window system board
+   ========================================================================== */
+
+.machine {
+  margin: 0 0 var(--s7);
+}
+
+.machine__scroller {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.machine__svg {
+  display: block;
+  width: 100%;
+  min-width: 940px;
+  height: auto;
+}
+
+/* ---- board chrome ---- */
+
+.mx-board { fill: none; stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 6; }
+
+.machine__svg text { font-family: var(--font-body); }
+
+.mx-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  fill: var(--accent);
+}
+:root[data-theme="source"] .mx-title { fill: var(--accent-soft); }
+
+.mx-group {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  fill: var(--text-faint);
+}
+.mx-small { font-size: 10.5px; fill: var(--text-faint); }
+.mx-pali { font-style: italic; font-size: 11px; fill: var(--grow); }
+.mx-portname { font-family: var(--font-display); font-weight: 500; font-size: 12.5px; fill: var(--text); }
+
+.mx-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  fill: var(--text);
+}
+
+/* ---- wires ---- */
+
+.mx-trace {
+  fill: none;
+  stroke: var(--accent-soft);
+  stroke-width: 2;
+  opacity: 0.55;
+  transition: opacity 0.6s var(--ease), stroke 0.6s var(--ease);
+}
+.mx-wire { fill: none; stroke: var(--line-strong); stroke-width: 1.4; }
+.mx-wire--dash { stroke-dasharray: 4 5; }
+.mx-wire--dot { stroke-dasharray: 2 4; }
+.mx-tick { fill: var(--accent-soft); opacity: 0.7; transition: opacity 0.6s var(--ease); }
+
+.mx-token { fill: var(--accent); }
+:root[data-theme="source"] .mx-token { fill: var(--accent-soft); }
+
+/* ---- modules ---- */
+
+.mx-rect {
+  fill: var(--surface-alt);
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  transition: fill 0.25s var(--ease), stroke 0.25s var(--ease);
+}
+.mx-rect--accent { fill: var(--accent-wash); stroke: var(--accent-line); }
+.mx-frame { fill: none; stroke: var(--line); stroke-width: 1; stroke-dasharray: 4 5; }
+.mx-gaprect {
+  fill: none;
+  stroke: var(--grow);
+  stroke-width: 1.6;
+  stroke-dasharray: 6 5;
+  transition: fill 0.35s var(--ease), stroke-width 0.25s var(--ease);
+}
+
+.mx-mod { cursor: pointer; }
+.mx-mod .mx-rect,
+.mx-mod .mx-gaprect,
+.mx-mod .mx-frame { transition: fill 0.25s var(--ease), stroke 0.25s var(--ease); }
+
+.mx-mod:hover .mx-rect { fill: var(--accent-wash); stroke: var(--accent-soft); }
+.mx-mod:hover .mx-frame { stroke: var(--accent-soft); }
+.mx-mod:focus-visible { outline: none; }
+.mx-mod:focus-visible .mx-rect,
+.mx-mod:focus-visible .mx-frame,
+.mx-mod:focus-visible .mx-gaprect { stroke: var(--accent); stroke-width: 2.2; }
+
+.mx-mod.is-sel .mx-rect { fill: var(--accent); stroke: var(--accent); }
+.mx-mod.is-sel:not(.mx-mod--gap):not(.mx-mod--frame) .mx-name { fill: #fff; }
+.mx-mod.is-sel:not(.mx-mod--gap):not(.mx-mod--frame) .mx-pali { fill: var(--brand-pale); }
+.mx-mod--gap.is-sel .mx-name { fill: var(--grow); }
+:root[data-theme="source"] .mx-mod.is-sel .mx-rect { fill: var(--accent-soft); stroke: var(--accent-soft); }
+:root[data-theme="source"] .mx-mod.is-sel:not(.mx-mod--gap):not(.mx-mod--frame) .mx-name { fill: var(--bg-sunken); }
+:root[data-theme="source"] .mx-mod.is-sel:not(.mx-mod--gap):not(.mx-mod--frame) .mx-pali { fill: var(--bg-sunken); }
+.mx-mod.is-sel .mx-frame,
+.mx-mod.is-sel .mx-gaprect { stroke: var(--accent); stroke-width: 2.4; }
+
+.mx-mod--exit .mx-rect { fill: none; stroke-dasharray: 5 5; }
+.mx-mod--obs .mx-rect { fill: var(--grow-wash); stroke: var(--grow); stroke-opacity: 0.45; }
+.mx-mod--prog .mx-rect { fill: none; stroke: var(--grow); stroke-opacity: 0.4; stroke-dasharray: 5 4; }
+.machine.is-observing .mx-mod--prog .mx-rect { stroke-opacity: 1; stroke-dasharray: none; }
+
+.mx-badge circle { fill: var(--accent-soft); opacity: 0.16; }
+.mx-badge text {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  fill: var(--accent);
+  font-weight: 600;
+}
+:root[data-theme="source"] .mx-badge text { fill: var(--accent-soft); }
+.mx-badge--free circle { fill: var(--accent-soft); opacity: 0.16; }
+
+.mx-loadbg { fill: var(--line); }
+.mx-load { fill: var(--accent-soft); opacity: 0.8; }
+.mx-rootsframe { stroke-dasharray: 3 5; }
+
+/* ---- state: observer attached ---- */
+
+.mx-obswire,
+.mx-exitwire {
+  opacity: 0.35;
+  transition: opacity 0.5s var(--ease), stroke 0.5s var(--ease);
+}
+
+.machine.is-observing .mx-obswire,
+.machine.is-observing .mx-exitwire {
+  opacity: 1;
+  stroke: var(--grow);
+}
+.machine.is-observing .mx-gaprect { fill: var(--grow-wash); stroke-width: 2.4; }
+.machine.is-observing .mx-mod--obs .mx-rect { fill: var(--grow); stroke: var(--grow); }
+.machine.is-observing .mx-mod--obs .mx-name { fill: #fff; }
+.machine.is-observing .mx-mod--obs .mx-pali { fill: #fff; }
+.machine.is-observing .mx-mod--exit .mx-rect { stroke: var(--grow); stroke-dasharray: none; }
+.machine.is-observing .mx-mod--exit .mx-name { fill: var(--grow); }
+
+/* downstream of the gap goes quiet */
+.machine.is-observing .mx-mod--hot { opacity: 0.28; }
+.machine.is-observing .mx-trace { opacity: 0.18; }
+.machine.is-observing .mx-tick { opacity: 0.18; }
+.machine.is-observing .mx-token { opacity: 0.2; }
+.mx-mod--hot { transition: opacity 0.5s var(--ease); }
+
+/* ---- state: fuel cut ---- */
+
+.machine.is-cut .mx-rootsframe { stroke: var(--line); }
+.machine.is-cut .mx-load { opacity: 0.12; }
+.machine.is-cut .mx-rootwire { opacity: 0.1; }
+.machine.is-cut .mx-trace { opacity: 0.12; }
+.machine.is-cut .mx-tick { opacity: 0.1; }
+.machine.is-cut .mx-token { opacity: 0; }
+.machine.is-cut .mx-mod--hot { opacity: 0.22; }
+/* Solid once the fuel is cut, so the label reads whether or not the block
+   is also the one being inspected. */
+.machine.is-cut .mx-mod--exit .mx-rect { stroke: var(--grow); stroke-dasharray: none; fill: var(--grow); }
+.machine.is-cut .mx-mod--exit .mx-name,
+.machine.is-cut .mx-mod--exit .mx-pali { fill: #fff; }
+.machine.is-cut .mx-exitwire { opacity: 1; stroke: var(--grow); }
+.mx-token { transition: opacity 0.8s var(--ease); }
+
+/* ---- controls and inspector ---- */
+
+.machine__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2);
+  margin-top: var(--s4);
+}
+.machine__hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-faint);
+  margin-left: var(--s2);
+}
+
+.machine__panel {
+  margin-top: var(--s4);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--surface);
+  padding: var(--s5);
+}
+.machine__phead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s3);
+  flex-wrap: wrap;
+  margin-bottom: var(--s3);
+}
+.machine__pname {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+:root[data-theme="source"] .machine__pname { color: var(--text); }
+.machine__ppali { font-style: italic; color: var(--grow); }
+.machine__psys {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.machine__prole { margin-bottom: var(--s3); color: var(--text); max-width: 68ch; }
+.machine__pnote { font-size: 0.9rem; color: var(--text-soft); max-width: 68ch; margin-bottom: var(--s4); }
+.machine__plink {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--accent-soft);
+}
+.machine__plink:hover { text-decoration: underline; }
+
+/* ---- home page framing ---- */
+
+.home { max-width: 1240px; margin: 0 auto; padding: var(--s7) var(--s6) var(--s9); }
+.home__head { margin-bottom: var(--s6); }
+.home__kicker {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  margin-bottom: var(--s3);
+}
+.home__h1 {
+  font-size: var(--step-3);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--s4);
+  max-width: 20ch;
+}
+.home__sub { font-size: var(--step-1); color: var(--text-soft); max-width: 64ch; line-height: 1.5; }
+
+.home__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s5);
+  margin-top: var(--s7);
+  padding-top: var(--s5);
+  border-top: 1px solid var(--line);
+}
+.home__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s3);
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 500;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  transition: transform 0.2s var(--ease-out), background-color 0.2s var(--ease);
+}
+:root[data-theme="source"] .home__cta { color: var(--bg-sunken); }
+.home__cta:hover { transform: translateX(3px); background: var(--accent-soft); color: var(--bg); }
+:root[data-theme="source"] .home__cta:hover { color: var(--bg-sunken); }
+.home__note { font-size: 0.88rem; color: var(--text-faint); max-width: 46ch; line-height: 1.55; }
+
+@media (max-width: 900px) {
+  .home { padding: calc(var(--s8) + 1rem) var(--s5) var(--s8); }
+}
