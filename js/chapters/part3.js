@@ -8,6 +8,7 @@ export const gap = {
   group: "The seam",
   title: "The one cuttable edge",
   pali: "vedanā → taṇhā",
+  si: "වේදනා → තණ්හා",
   blocks: [
     ["lead",
       "Everything so far has been description. This is the chapter where the description turns into something you can use, and it turns on a single step of the chain."],
@@ -88,6 +89,7 @@ export const karma = {
   group: "The seam",
   title: "The update rule",
   pali: "kamma — action",
+  si: "කම්ම · කර්ම",
   blocks: [
     ["lead",
       "_Kamma_ means action. That is the whole word. Not fate, not justice, not a balance sheet, not a cosmic accountant. The Buddhist innovation was to narrow it further: what counts as action is *intention*."],
@@ -149,6 +151,7 @@ export const roots = {
   group: "The seam",
   title: "Three processes always running",
   pali: "akusala-mūla — the unwholesome roots",
+  si: "අකුසල මූල",
   blocks: [
     ["lead",
       "Every unskilful action traces back to one of three roots. They are not sins and they are not personality traits. They are closer to background processes that consume the system's capacity whether or not anything is asking them to."],

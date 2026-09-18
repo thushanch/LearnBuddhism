@@ -6,6 +6,7 @@ import { CHAPTERS, byId, grouped } from "./chapters/index.js";
 import { renderChapter, esc } from "./render.js";
 import { initDiagrams } from "./diagrams.js";
 import { machineView, wireMachine } from "./machine.js";
+import { microView, wireMicro } from "./micro.js";
 
 const main = document.getElementById("main");
 const railLinks = document.getElementById("railLinks");
@@ -43,6 +44,10 @@ function buildRail() {
     <a class="rail__link" href="#/" data-id="__home">
       <span class="rail__num">&#9632;</span>
       <span>The whole machine</span>
+    </a>
+    <a class="rail__link" href="#/micro" data-id="micro">
+      <span class="rail__num">&#9642;</span>
+      <span>Underneath the board</span>
     </a>`;
 
   railLinks.innerHTML = boardLink + grouped()
@@ -116,6 +121,32 @@ function homeView() {
     </section>`;
 }
 
+function microPage() {
+  return `
+    <section class="microwrap">
+      <header class="home__head">
+        <p class="home__kicker reveal">the fine-grained model · abhidhamma</p>
+        <h1 class="home__h1 reveal">Underneath the board.</h1>
+        <p class="home__sub reveal">
+          Zoom in on any single block of the main board and it turns out to be a
+          series of its own. Here is the smallest unit of matter, the smallest unit
+          of mind, and the seventeen moments that one flicker of seeing actually is —
+          with the same branch point showing up again, at a much smaller scale.
+        </p>
+      </header>
+
+      ${microView()}
+
+      <div class="home__foot reveal">
+        <a class="home__cta" href="#/">Back to the main board <span aria-hidden="true">&rarr;</span></a>
+        <p class="home__note">
+          This layer is Theravāda Abhidhamma and its commentaries, not the suttas.
+          The board says so itself, at the bottom.
+        </p>
+      </div>
+    </section>`;
+}
+
 /* ---------- reveal on scroll ---------- */
 
 let io;
@@ -160,6 +191,10 @@ function route() {
     main.innerHTML = homeView();
     markCurrent("__home");
     document.title = "Escaping the System — Buddhism read as an engineering report";
+  } else if (id === "micro") {
+    main.innerHTML = microPage();
+    markCurrent("micro");
+    document.title = "Underneath the board — Escaping the System";
   } else {
     const ch = byId[id];
     if (!ch) {
@@ -175,6 +210,8 @@ function route() {
   initDiagrams(main);
   const board = main.querySelector("[data-machine]");
   if (board) wireMachine(board);
+  const micro = main.querySelector("[data-micro]");
+  if (micro) wireMicro(micro);
   observeReveals(main);
   setRail(false);
   window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });

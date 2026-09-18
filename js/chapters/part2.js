@@ -8,6 +8,7 @@ export const khandha = {
   group: "Architecture",
   title: "Five subsystems",
   pali: "pañcakkhandhā — the five heaps",
+  si: "පඤ්චක්ඛන්ධ",
   blocks: [
     ["lead",
       "Take the thing you call yourself apart and the early texts say you get five components. Not four, not six. The number matters less than the exercise: every part is listed, and none of the parts is you."],
@@ -99,6 +100,7 @@ export const senses = {
   group: "Architecture",
   title: "Six input ports",
   pali: "saḷāyatana — the six bases",
+  si: "සළායතන",
   blocks: [
     ["lead",
       "The system has six input channels, not five. Mind is one of them — a sense organ, sitting on the bus alongside the eye and the ear, taking thoughts as its objects the way the eye takes colours."],
@@ -153,6 +155,7 @@ export const chain = {
   group: "Architecture",
   title: "The dependency chain",
   pali: "paṭiccasamuppāda — dependent origination",
+  si: "පටිච්චසමුප්පාද",
   blocks: [
     ["lead",
       "Twelve links, each conditioning the next, closing back on itself. This is the central mechanism of the whole teaching and the reason the fix is possible: a chain of conditions is a chain you can break."],

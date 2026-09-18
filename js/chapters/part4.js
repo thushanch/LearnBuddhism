@@ -8,6 +8,7 @@ export const path = {
   group: "The programme",
   title: "The eight-part programme",
   pali: "ariya aṭṭhaṅgika magga — the noble eightfold path",
+  si: "අරිය අට්ඨංගික මග්ග",
   blocks: [
     ["lead",
       "The fourth field of the [bug report](#/report) is the fix, and the fix is not a belief to adopt or a ritual to perform. It is eight simultaneous changes to how the system handles itself, grouped into three layers."],
@@ -80,6 +81,7 @@ export const practice = {
   group: "The programme",
   title: "Attaching the debugger",
   pali: "samatha & vipassanā",
+  si: "සමථ · විපස්සනා",
   blocks: [
     ["lead",
       "Meditation in this framework is not relaxation and not an altered state. It is the part of the programme where you get direct access to the mechanism while it runs."],
@@ -144,6 +146,7 @@ export const exit = {
   group: "The exit",
   title: "Going out",
   pali: "nibbāna — unbinding, extinguishing",
+  si: "නිබ්බාන · නිවන",
   blocks: [
     ["lead",
       "The word does not mean paradise, and it does not mean annihilation. It means what happens to a fire when it stops being fed."],

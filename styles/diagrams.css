@@ -524,3 +524,15 @@
   transform: scaleY(0.06) scaleX(0.5);
   animation: none;
 }
+
+/* Sinhala and a glyph in the term map */
+.gloss__ic { display: inline-flex; color: var(--accent-soft); margin-right: 0.45rem; }
+.gloss__ic .ic { width: 15px; height: 15px; }
+.gloss__si {
+  display: block;
+  font-family: var(--font-sinhala);
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  margin-top: 1px;
+}

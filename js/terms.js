@@ -124,3 +124,99 @@ export const TERMS = [
   ["idappaccayatā", "this-conditionality", "condition, not trigger",
    "When this is, that comes to be. Weaker than causation, and the whole path depends on that looseness."],
 ];
+
+/* Pali in Sinhala script, keyed by the Pali form above. Where the everyday
+   Sinhala word differs from the Pali and is the one people actually use, both
+   are given, separated by a middle dot. */
+export const SI = {
+  "saṃsāra": "සංසාර",
+  "nibbāna": "නිබ්බාන · නිවන",
+  "dukkha": "දුක්ඛ · දුක",
+  "anicca": "අනිච්ච",
+  "anattā": "අනත්ත",
+  "taṇhā": "තණ්හා",
+  "upādāna": "උපාදාන",
+  "kamma": "කම්ම · කර්ම",
+  "cetanā": "චේතනා",
+  "saṅkhārā": "සංඛාර",
+  "viññāṇa": "විඤ්ඤාණ",
+  "vedanā": "වේදනා",
+  "saññā": "සඤ්ඤා",
+  "rūpa": "රූප",
+  "khandha": "ඛන්ධ",
+  "phassa": "ඵස්ස",
+  "saḷāyatana": "සළායතන",
+  "mano": "මන · මනස",
+  "paṭiccasamuppāda": "පටිච්චසමුප්පාද",
+  "avijjā": "අවිජ්ජා",
+  "bhava": "භව",
+  "jāti": "ජාති",
+  "sati": "සති · සිහිය",
+  "samādhi": "සමාධි",
+  "samatha": "සමථ",
+  "vipassanā": "විපස්සනා",
+  "paññā": "පඤ්ඤා",
+  "sīla": "සීල",
+  "magga": "මග්ග · මාර්ග",
+  "sammā": "සම්මා",
+  "lobha": "ලෝභ",
+  "dosa": "දෝස",
+  "moha": "මෝහ",
+  "mettā": "මෙත්තා",
+  "papañca": "පපඤ්ච",
+  "tilakkhaṇa": "තිලක්ඛණ",
+  "arahant": "අරහත් · රහත්",
+  "nīvaraṇa": "නීවරණ",
+  "punabbhava": "පුනබ්භව",
+  "idappaccayatā": "ඉදප්පච්චයතා",
+  "rūpa kalāpa": "රූප කලාප",
+  "cittakkhaṇa": "චිත්තක්ෂණ",
+  "citta vīthi": "චිත්ත වීථි",
+  "bhavaṅga": "භවංග",
+  "javana": "ජවන",
+  "votthapana": "වොත්ථපන",
+  "yoniso manasikāra": "යෝනිසෝ මනසිකාර",
+};
+
+/* The micro layer. Abhidhamma and commentary, not the suttas — see the
+   micro board, which says so on its own face. */
+TERMS.push(
+  ["rūpa kalāpa", "a group of form", "smallest unit of matter",
+   "Eight qualities that never occur apart: the four great elements plus colour, odour, taste and nutritive essence."],
+
+  ["cittakkhaṇa", "a moment of mind", "one clock tick",
+   "One moment of consciousness, in three phases: arising, presence, dissolution. Seventeen of them span one material group."],
+
+  ["citta vīthi", "a track of mind", "the pipeline",
+   "The seventeen-moment series that one act of seeing actually is. It runs entirely below the threshold of noticing."],
+
+  ["bhavaṅga", "factor of becoming", "the idle loop",
+   "The resting stream the mind falls back into between cognitive series. Not blankness — just nothing being processed."],
+
+  ["javana", "running swiftly", "the only write-enabled stage",
+   "Seven moments in the middle of the series. The only ones in it that make kamma; everything else is resultant or functional."],
+
+  ["votthapana", "determining", "the branch instruction",
+   "The moment the series decides which way it will run. This is the gap on the main board, at a much smaller scale."],
+
+  ["yoniso manasikāra", "attention from the origin", "wise attention",
+   "Attention applied at the determining moment. Applied, the seven impulsions run wholesome; not applied, they run unwholesome. The object is identical either way."]
+);
+
+/* Which glyph stands for which term in the term map. */
+export const ICON_FOR = {
+  "saṃsāra": "loop", "nibbāna": "exit", "dukkha": "marks", "anicca": "marks",
+  "anattā": "khandha", "taṇhā": "craving", "upādāna": "clinging", "kamma": "karma",
+  "cetanā": "karma", "saṅkhārā": "store", "viññāṇa": "bus", "vedanā": "feeling",
+  "saññā": "perception", "rūpa": "ports", "khandha": "khandha", "phassa": "contact",
+  "saḷāyatana": "senses", "mano": "senses", "paṭiccasamuppāda": "chain",
+  "avijjā": "avijja", "bhava": "becoming", "jāti": "birth", "sati": "observer",
+  "samādhi": "practice", "samatha": "practice", "vipassanā": "observer",
+  "paññā": "magga", "sīla": "magga", "magga": "magga", "sammā": "magga",
+  "lobha": "craving", "dosa": "roots", "moha": "avijja", "mettā": "practice",
+  "papañca": "perception", "tilakkhaṇa": "marks", "arahant": "exit",
+  "nīvaraṇa": "limits", "punabbhava": "birth", "idappaccayatā": "chain",
+  "rūpa kalāpa": "kalapa", "cittakkhaṇa": "citta", "citta vīthi": "vithi",
+  "bhavaṅga": "bhavanga", "javana": "javana", "votthapana": "gap",
+  "yoniso manasikāra": "observer",
+};

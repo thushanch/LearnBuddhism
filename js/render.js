@@ -150,7 +150,7 @@ export function renderChapter(ch, prev, next) {
         <span>${esc(ch.group)}</span>
       </div>
       <h1 class="chapter__title">${fmt(ch.title)}</h1>
-      ${ch.pali ? `<p class="chapter__pali">${esc(ch.pali)}</p>` : ""}
+      ${ch.pali ? `<p class="chapter__pali">${esc(ch.pali)}${ch.si ? `<span class="chapter__si">${esc(ch.si)}</span>` : ""}</p>` : ""}
       ${body}
       ${chapNav(prev, next)}
     </article>`;

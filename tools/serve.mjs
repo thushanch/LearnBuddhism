@@ -1,4 +1,5 @@
 /* Minimal zero-dependency static server for local preview.
+   Port comes from argv, then $PORT, then 4173.
    Usage: node tools/serve.mjs [port] */
 
 import { createServer } from "node:http";
@@ -6,7 +7,7 @@ import { readFile, stat } from "node:fs/promises";
 import { extname, join, normalize, resolve } from "node:path";
 
 const ROOT = resolve(new URL("..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1"));
-const PORT = Number(process.argv[2]) || 4173;
+const PORT = Number(process.argv[2] || process.env.PORT) || 4173;
 
 const TYPES = {
   ".html": "text/html; charset=utf-8",

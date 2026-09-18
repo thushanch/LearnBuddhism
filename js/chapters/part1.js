@@ -71,6 +71,7 @@ export const loop = {
   group: "The system",
   title: "You are inside a loop",
   pali: "saṃsāra — wandering on",
+  si: "සංසාර",
   blocks: [
     ["lead",
       "_Saṃsāra_ is usually translated as the cycle of rebirth, which makes it sound like a place you are stuck in. It is closer to a process you are stuck *as*."],
@@ -127,6 +128,7 @@ export const report = {
   group: "The system",
   title: "The bug report",
   pali: "cattāri ariyasaccāni — the four true things",
+  si: "චත්තාරි අරියසච්ච",
   blocks: [
     ["lead",
       "The Four Noble Truths get taught as a list of beliefs. They are not a list of beliefs. They are a diagnosis in four fields, and they have the exact structure of a report you would file against any misbehaving system."],
@@ -210,6 +212,7 @@ export const marks = {
   group: "The system",
   title: "Three runtime properties",
   pali: "tilakkhaṇa — the three marks",
+  si: "තිලක්ඛණ",
   blocks: [
     ["lead",
       "Three things are said to be true of everything inside the system. Not three rules imposed on it — three properties that fall out of how it is built."],

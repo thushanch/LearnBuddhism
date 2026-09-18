@@ -125,6 +125,8 @@
 }
 :root[data-theme="source"] .mx-badge text { fill: var(--accent-soft); }
 .mx-badge--free circle { fill: var(--accent-soft); opacity: 0.16; }
+/* The bus is only 20px wide, so its badge sits on the bar itself. */
+.mx-badge--onbar circle { fill: var(--bg); opacity: 1; stroke: var(--accent-line); stroke-width: 1; }
 
 .mx-loadbg { fill: var(--line); }
 .mx-load { fill: var(--accent-soft); opacity: 0.8; }
@@ -282,4 +284,188 @@
 
 @media (max-width: 900px) {
   .home { padding: calc(var(--s8) + 1rem) var(--s5) var(--s8); }
+}
+
+/* ==========================================================================
+   Sinhala, icons, the scenario runner, and the inspector's examples
+   ========================================================================== */
+
+.mx-si {
+  font-family: var(--font-sinhala);
+  font-size: 10px;
+  fill: var(--text-faint);
+}
+.mx-icon { stroke: var(--accent-soft); opacity: 0.85; }
+.mx-mod:hover .mx-icon { stroke: var(--accent); opacity: 1; }
+.mx-mod.is-sel .mx-icon { stroke: #fff; opacity: 1; }
+:root[data-theme="source"] .mx-mod.is-sel .mx-icon { stroke: var(--bg-sunken); }
+.mx-mod.is-sel:not(.mx-mod--gap):not(.mx-mod--frame) .mx-si { fill: var(--brand-pale); }
+.mx-mod--gap .mx-icon,
+.mx-mod--obs .mx-icon,
+.mx-mod--prog .mx-icon { stroke: var(--grow); }
+.machine.is-cut .mx-mod--exit .mx-icon,
+.machine.is-cut .mx-mod--exit .mx-si { stroke: #fff; fill: #fff; }
+
+/* ---- a block while a scenario is passing through it ---- */
+
+.mx-mod.is-run .mx-rect,
+.mx-mod.is-run .mx-gaprect {
+  fill: var(--accent);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+.mx-mod.is-run .mx-name { fill: #fff; }
+.mx-mod.is-run .mx-pali { fill: var(--brand-pale); }
+.mx-mod.is-run .mx-si { fill: var(--brand-pale); }
+.mx-mod.is-run .mx-icon { stroke: #fff; opacity: 1; }
+:root[data-theme="source"] .mx-mod.is-run .mx-rect,
+:root[data-theme="source"] .mx-mod.is-run .mx-gaprect { fill: var(--accent-soft); stroke: var(--accent-soft); }
+:root[data-theme="source"] .mx-mod.is-run .mx-name,
+:root[data-theme="source"] .mx-mod.is-run .mx-pali,
+:root[data-theme="source"] .mx-mod.is-run .mx-si { fill: var(--bg-sunken); }
+:root[data-theme="source"] .mx-mod.is-run .mx-icon { stroke: var(--bg-sunken); }
+
+.mx-mod.is-halt .mx-gaprect { fill: var(--grow-wash); stroke: var(--grow); stroke-width: 2.6; stroke-dasharray: none; }
+.mx-mod.is-halt .mx-name { fill: var(--grow); }
+.mx-mod.is-halt .mx-icon { stroke: var(--grow); opacity: 1; }
+
+/* While a scenario runs, the board stops inviting clicks. */
+.machine.is-running .mx-mod { cursor: default; }
+.machine.is-running .mx-mod:hover .mx-rect { fill: var(--surface-alt); stroke: var(--line-strong); }
+
+/* ---- the scenario runner ---- */
+
+.sim {
+  margin-top: var(--s4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: var(--s5);
+}
+.sim__head {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  flex-wrap: wrap;
+  margin-bottom: var(--s4);
+}
+.sim__head .ic { width: 18px; height: 18px; color: var(--accent-soft); flex: none; }
+.sim__title { font-family: var(--font-display); font-weight: 600; color: var(--text); }
+.sim__sub {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-faint);
+  margin-left: auto;
+}
+
+.sim__picks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--s3);
+  margin-bottom: var(--s4);
+}
+.sim__pick {
+  text-align: left;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--s3) var(--s4);
+  transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease);
+}
+.sim__pick:hover { border-left-color: var(--accent-soft); }
+.sim__pick.is-on { border-left-color: var(--accent); background: var(--accent-wash); }
+.sim__picken {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.sim__picksi {
+  display: block;
+  font-family: var(--font-sinhala);
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin-top: 2px;
+}
+
+.sim__controls { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s4); }
+
+.sim__stage {
+  background: var(--bg-sunken);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: var(--s4);
+  min-height: 6.2rem;
+}
+.sim__step {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: var(--s2);
+}
+.sim__step b { color: var(--accent-soft); font-weight: 400; }
+.sim__step i { font-style: italic; color: var(--grow); text-transform: none; letter-spacing: 0; }
+.sim__si { font-family: var(--font-sinhala); text-transform: none; letter-spacing: 0; }
+.sim__text { margin: 0; color: var(--text); max-width: 70ch; line-height: 1.6; }
+.sim__text b { color: var(--accent); }
+.sim__text .halt { color: var(--grow); font-weight: 500; }
+
+/* ---- inspector additions ---- */
+
+.machine__picon { display: inline-flex; color: var(--accent-soft); }
+.machine__picon .ic { width: 20px; height: 20px; }
+.machine__psi { font-family: var(--font-sinhala); color: var(--text-faint); font-size: 0.92rem; }
+
+.machine__pex {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--s4);
+  display: grid;
+  gap: var(--s2);
+  max-width: 70ch;
+}
+.machine__pex:empty { display: none; }
+.machine__pex li {
+  position: relative;
+  padding-left: var(--s5);
+  font-size: 0.89rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+  margin: 0;
+}
+.machine__pex li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 10px;
+  height: 1px;
+  background: var(--accent-soft);
+}
+
+/* ---- shared icon sizing ---- */
+
+.ic {
+  width: 16px;
+  height: 16px;
+  vertical-align: -0.16em;
+  flex: none;
+}
+
+/* Both boards are wider than a phone; say so rather than letting it look broken. */
+.board-hint { display: none; }
+@media (max-width: 1000px) {
+  .board-hint {
+    display: block;
+    margin: var(--s2) 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--text-faint);
+  }
 }

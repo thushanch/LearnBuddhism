@@ -45,6 +45,7 @@
   /* Typography */
   --font-display: "Poppins", "Segoe UI", system-ui, sans-serif;
   --font-body:    "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-sinhala: "Noto Sans Sinhala", "Iskoola Pota", "Nirmala UI", sans-serif;
   --font-mono:    ui-monospace, "SFMono-Regular", "Cascadia Mono", "Consolas", monospace;
 
   --step--1: clamp(0.78rem, 0.76rem + 0.10vw, 0.84rem);

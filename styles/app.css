@@ -377,3 +377,14 @@
   .maprow__arrow { display: none; }
   .chapter { padding-left: var(--s4); padding-right: var(--s4); }
 }
+
+/* Sinhala beside the Pali in a chapter subtitle */
+.chapter__si {
+  display: block;
+  font-family: var(--font-sinhala);
+  font-style: normal;
+  font-size: 0.92rem;
+  color: var(--text-faint);
+  margin-top: var(--s1);
+  letter-spacing: 0;
+}

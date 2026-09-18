@@ -7,7 +7,8 @@
    idea per figure, labels in Poppins, machine text in mono.
    ========================================================================== */
 
-import { TERMS } from "./terms.js";
+import { TERMS, SI, ICON_FOR } from "./terms.js";
+import { icon } from "./icons.js";
 
 const MOTION =
   typeof window === "undefined" ||
@@ -38,15 +39,6 @@ function node(x, y, w, h, { num, label, pali, cls = "dg-box" } = {}) {
       ${num ? `<text x="${left}" y="${top + 16}" class="dg-mono">${num}</text>` : ""}
       <text x="${left}" y="${top + (num ? 32 : 22)}" class="dg-label">${label}</text>
       ${pali ? `<text x="${left}" y="${top + (num ? 46 : 38)}" class="dg-pali">${pali}</text>` : ""}
-    </g>`;
-}
-
-/** Centred single-line box, used where there is no Pali sub-label. */
-function chip(x, y, w, h, label, cls = "dg-box") {
-  return `
-    <g>
-      <rect x="${x - w / 2}" y="${y - h / 2}" width="${w}" height="${h}" rx="${h / 2}" class="${cls}"/>
-      <text x="${x}" y="${y + 4}" text-anchor="middle" class="dg-label">${label}</text>
     </g>`;
 }
 
@@ -534,12 +526,17 @@ function dgGloss() {
     <div class="gloss" data-interactive="gloss">
       <label class="visually-hidden" for="glossq">Filter terms</label>
       <input class="gloss__search" id="glossq" type="search" autocomplete="off"
-             placeholder="filter — try craving, fire, observer, port">
+             placeholder="filter — try craving, fire, ජවන, observer">
       <div class="gloss__list" data-list>
         ${TERMS.map(
           ([pali, lit, sys, note]) => `
-          <div class="gloss__item" data-hay="${[pali, lit, sys, note].join(" ").toLowerCase().replace(/"/g, "")}">
-            <span class="gloss__pali">${pali}<span class="gloss__lit">${lit}</span></span>
+          <div class="gloss__item"
+               data-hay="${[pali, SI[pali] || "", lit, sys, note].join(" ").toLowerCase().replace(/"/g, "")}">
+            <span class="gloss__pali">
+              <span class="gloss__ic">${icon(ICON_FOR[pali] || "glossary")}</span>${pali}
+              <span class="gloss__si">${SI[pali] || ""}</span>
+              <span class="gloss__lit">${lit}</span>
+            </span>
             <span class="gloss__sys">${sys}</span>
             <span class="gloss__def">${note}</span>
           </div>`
