@@ -144,7 +144,7 @@ Each phase is a board plus a chapter or two, in the house style: one insight per
 screen, Pali and Sinhala on everything, everyday examples, honest layer labels, and
 something to press.
 
-### Phase 1 — The path, complete
+### Phase 1 — The path, complete  ·  **DONE** ()
 
 **Board: the thirty-seven.** A single graph. Seven sets as seven columns, fourteen
 qualities as nodes, edges showing where each quality reappears. Click *sati* and it
@@ -253,8 +253,8 @@ Three more, for the phases above:
 
 ## 6. Sequencing
 
-Phase 1 first — the path is the biggest gap and the thirty-seven board is the best
-single addition the site can take. Then Phase 4's thirty-day path, because it
+~~Phase 1 first~~ — **shipped**. The three sections landed as one board rather than
+three, to keep the rail short. Next: Phase 4's thirty-day path, because it
 gives every subsequent board a place to land. Then Phases 2 and 3 in either order.
 
 Each phase is one to two working sessions in the current style.

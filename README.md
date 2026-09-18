@@ -31,6 +31,23 @@ block, with a line of narration at each step. Run the same moment again with the
 attached and it stops at the gap instead of completing the loop. That contrast is the
 whole argument, made in about twenty seconds.
 
+**The මාර්ගය board** (`#/path-board`) — what he said he taught, the order it is
+walked in, and how anyone would know they were getting anywhere. Three sections:
+
+- **The thirty-seven** — the *bodhipakkhiyā dhammā*, which is the Buddha's own
+  answer (DN 16) to what should be preserved. Seven sets, thirty-seven items — and
+  only **fourteen distinct qualities**, reused. Press any quality and it lights up
+  everywhere it occurs: *sati* in eight places, *viriya* in nine. The counts are
+  computed from the data rather than asserted, so they cannot drift.
+- **The gradual training** — the eightfold path is a description; this is the
+  procedure. Ten stages from hearing the teaching to release, with a noise-floor
+  meter that drops as you walk it, because that is the actual argument for the
+  ordering: each stage exists to quieten the instrument for the next.
+- **The register** — the ten fetters as ten flags, and what each of the four
+  stages clears. Press *sotāpanna* and three fall; press *arahant* and all ten do.
+  The surprise, and it is the point of the section, is how late sensual desire
+  appears: stream-entry clears self-view, doubt and rites — craving is untouched.
+
 **The micro board** (`#/micro`) — the second window, underneath the first:
 
 - one material unit — *rūpa kalāpa*, the eight qualities that are never found apart
@@ -121,6 +138,7 @@ index.html            shell: rail, main, theme bootstrap
 js/
   app.js              hash router, theme, rail, scroll reveal
   machine.js          the main board, its inspector and the simulator
+  path.js             the path board: the 37, the gradual training, the fetters
   micro.js            the micro board: kalapa, cittakkhana, citta vithi
   cittas.js           the sith warga board: the 89, the 52, the field decoder
   kamma.js            merit, demerit, how kamma ripens, and the death process
@@ -135,6 +153,7 @@ styles/
   app.css             shell and components
   diagrams.css        chapter figures and interactive panels
   machine.css         the main board, the simulator, Sinhala and icon styling
+  path.css            the path board
   micro.css           the micro board
   cittas.css          the sith warga board and its decoder
   kamma.css           the merit / demerit / vipaka / death board

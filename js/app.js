@@ -9,6 +9,7 @@ import { machineView, wireMachine } from "./machine.js";
 import { microView, wireMicro } from "./micro.js";
 import { cittasView, wireCittas } from "./cittas.js";
 import { kammaView, wireKamma } from "./kamma.js";
+import { pathView, wirePath } from "./path.js";
 
 const main = document.getElementById("main");
 const railLinks = document.getElementById("railLinks");
@@ -46,6 +47,10 @@ function buildRail() {
     <a class="rail__link" href="#/" data-id="__home">
       <span class="rail__num">&#9632;</span>
       <span>The whole machine</span>
+    </a>
+    <a class="rail__link" href="#/path-board" data-id="path-board">
+      <span class="rail__num">&#9642;</span>
+      <span>මාර්ගය · the path</span>
     </a>
     <a class="rail__link" href="#/micro" data-id="micro">
       <span class="rail__num">&#9642;</span>
@@ -158,6 +163,34 @@ function homeView() {
           Fifteen chapters, eleven diagrams, forty terms mapped. Chapter 13 is a
           full audit of everywhere this computer metaphor misleads — read that
           one before you repeat any of the rest.
+        </p>
+      </div>
+    </section>`;
+}
+
+function pathPage() {
+  return `
+    <section class="microwrap">
+      <header class="home__head">
+        <p class="home__kicker reveal">what he said he taught</p>
+        <h1 class="home__h1 reveal">Fourteen things, arranged seven ways.</h1>
+        <p class="home__sub reveal">
+          Asked near the end of his life what should be preserved, the Buddha named
+          thirty-seven things in seven sets. Count the distinct qualities in them and
+          you get fourteen — the same handful, reused. Below that: the order the path
+          is actually walked in, and the ten-flag register that says what changes.
+        </p>
+      </header>
+
+      ${pathView()}
+
+      <div class="home__foot reveal">
+        <a class="home__cta" href="#/path">Read the chapter on the eightfold path <span aria-hidden="true">&rarr;</span></a>
+        <a class="machine__plink" href="#/practice">or the one on meditation &rarr;</a>
+        <p class="home__note">
+          The thirty-seven and the gradual training are sutta material. The reduction
+          to fourteen is commentarial — and it is arithmetic, so the board computes it
+          rather than asserting it.
         </p>
       </div>
     </section>`;
@@ -289,6 +322,10 @@ function route() {
     main.innerHTML = homeView();
     markCurrent("__home");
     document.title = "Escaping the System — Buddhism read as an engineering report";
+  } else if (id === "path-board") {
+    main.innerHTML = pathPage();
+    markCurrent("path-board");
+    document.title = "මාර්ගය · the path — Escaping the System";
   } else if (id === "kamma-board") {
     main.innerHTML = kammaPage();
     markCurrent("kamma-board");
@@ -322,6 +359,8 @@ function route() {
   if (cittas) wireCittas(cittas);
   const kamma = main.querySelector("[data-kamma]");
   if (kamma) wireKamma(kamma);
+  const pathb = main.querySelector("[data-path]");
+  if (pathb) wirePath(pathb);
   observeReveals(main);
   setRail(false);
   window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
