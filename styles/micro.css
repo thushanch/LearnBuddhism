@@ -43,7 +43,9 @@
 
 .mc-small { font-size: 10.5px; fill: var(--text-faint); }
 .mc-pali { font-style: italic; font-size: 11px; fill: var(--grow); }
-.mc-si { font-family: var(--font-sinhala); font-size: 10px; fill: var(--text-faint); }
+/* Scoped past .micro__svg text for the same reason as .mx-si. */
+.micro__svg .mc-si { font-family: var(--font-sinhala); }
+.mc-si { font-size: 10px; fill: var(--text-faint); }
 
 .mc-icon { stroke: var(--accent-soft); opacity: 0.85; }
 .mc-icon--yo { stroke: var(--grow); }

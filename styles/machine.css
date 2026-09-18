@@ -290,7 +290,9 @@
    Sinhala, icons, the scenario runner, and the inspector's examples
    ========================================================================== */
 
-.mx-si {
+/* Scoped past .machine__svg text, which would otherwise win on specificity
+   and leave Sinhala to a system fallback font. */
+.machine__svg .mx-si {
   font-family: var(--font-sinhala);
   font-size: 10px;
   fill: var(--text-faint);
