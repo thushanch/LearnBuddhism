@@ -47,7 +47,19 @@ smaller scale — the same branch, two zoom levels.
 This layer is Theravāda Abhidhamma and its commentaries, not the suttas, and the board
 says so on its own face rather than in a footnote.
 
-**Fifteen chapters**, in reading order:
+**The සිත් වර්ග board** (`#/cittas-board`) — the third window: the Abhidhamma
+classification of consciousness. The four spheres with their counts, the 54
+sense-sphere cittas broken into unwholesome, rootless and beautiful, and the 52
+mental factors below.
+
+The point it is built to make: the eighty-nine are not a list anybody memorised
+item by item. The eight greed-rooted cittas are three binary fields — joy or
+equanimity, with or without wrong view, prompted or unprompted — and two cubed is
+eight. The eight wholesome cittas have the same shape with one field swapped:
+knowledge in place of wrong view. Set the three switches and watch a citta get
+named in Pali and Sinhala, with an everyday example of what it looks like.
+
+**Sixteen chapters**, in reading order:
 
 | | Chapter | Pali | Sinhala |
 |---|---|---|---|
@@ -65,7 +77,8 @@ says so on its own face rather than in a footnote.
 | 11 | Attaching the debugger | samatha & vipassanā | සමථ · විපස්සනා |
 | 12 | Going out | nibbāna | නිබ්බාන · නිවන |
 | 13 | Where this metaphor breaks | the audit | |
-| 14 | Term map | 47 terms, searchable in English, Pali or Sinhala | |
+| 14 | Eighty-nine kinds of mind | citta | සිත් වර්ග |
+| 15 | Term map | 60 terms, searchable in English, Pali or Sinhala | |
 
 **Three interactive figures** beyond the two boards: the five aggregates (chapter 04), the
 feeling-to-craving pipeline (chapter 07), and the fire that goes out when you cut its
@@ -94,6 +107,7 @@ js/
   app.js              hash router, theme, rail, scroll reveal
   machine.js          the main board, its inspector and the simulator
   micro.js            the micro board: kalapa, cittakkhana, citta vithi
+  cittas.js           the sith warga board: the 89, the 52, the field decoder
   icons.js            one line-art glyph per concept, on a 24x24 grid
   render.js           turns chapter block arrays into HTML
   diagrams.js         the eleven chapter figures, plus interactive wiring
@@ -106,6 +120,7 @@ styles/
   diagrams.css        chapter figures and interactive panels
   machine.css         the main board, the simulator, Sinhala and icon styling
   micro.css           the micro board
+  cittas.css          the sith warga board and its decoder
 icons/                generated contour textures
 brand/                mark and wordmarks
 tools/serve.mjs       zero-dependency static server

@@ -1,0 +1,159 @@
+/* ==========================================================================
+   cittas.css — සිත් වර්ග, the eighty-nine
+   ========================================================================== */
+
+.cittas { margin: 0 0 var(--s7); }
+
+.cittas__svg {
+  display: block;
+  width: 100%;
+  min-width: 1080px;
+  height: auto;
+}
+.cittas__svg text { font-family: var(--font-body); }
+
+/* ---- type ---- */
+
+.ct-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  fill: var(--accent);
+}
+:root[data-theme="source"] .ct-title { fill: var(--accent-soft); }
+
+.ct-group {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  fill: var(--text-faint);
+}
+.ct-small { font-size: 10.5px; fill: var(--text-faint); }
+.ct-items { font-size: 10px; fill: var(--text-soft); font-style: italic; }
+.ct-si { font-family: var(--font-sinhala); font-size: 10.5px; fill: var(--text-faint); }
+.ct-name { font-family: var(--font-display); font-weight: 600; font-size: 14px; fill: var(--text); font-style: italic; }
+.ct-partname { font-family: var(--font-display); font-weight: 500; font-size: 12px; fill: var(--text); font-style: italic; }
+
+.ct-count {
+  font-family: var(--font-mono);
+  font-size: 26px;
+  fill: var(--accent);
+}
+:root[data-theme="source"] .ct-count { fill: var(--accent-soft); }
+.ct-partn { font-family: var(--font-mono); font-size: 15px; fill: var(--accent-soft); }
+
+/* ---- blocks ---- */
+
+.ct-rect {
+  fill: var(--surface-alt);
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  transition: fill 0.22s var(--ease), stroke 0.22s var(--ease);
+}
+.ct-rect--hot { fill: var(--accent-wash); stroke: var(--accent-line); }
+.ct-rect--cool { fill: var(--bg-sunken); stroke: var(--line-strong); }
+.ct-rect--grow { fill: var(--grow-wash); stroke: var(--grow); stroke-opacity: 0.5; }
+
+.ct-mod { cursor: pointer; }
+.ct-mod:hover .ct-rect { stroke: var(--accent-soft); stroke-width: 1.6; }
+.ct-mod:focus-visible { outline: none; }
+.ct-mod:focus-visible .ct-rect { stroke: var(--accent); stroke-width: 2.2; }
+.ct-mod.is-sel .ct-rect { stroke: var(--accent); stroke-width: 2.4; }
+
+/* ---- the decoder ---- */
+
+.decoder { display: grid; gap: var(--s4); margin-bottom: var(--s4); }
+
+.decoder__field { display: grid; gap: var(--s2); }
+.decoder__flabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.decoder__flabel i {
+  font-family: var(--font-sinhala);
+  font-style: normal;
+  color: var(--grow);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-left: 0.3rem;
+}
+
+.decoder__opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s3); }
+
+.decoder__opt {
+  display: grid;
+  gap: 2px;
+  text-align: left;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--s3) var(--s4);
+  transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease);
+}
+.decoder__opt:hover { border-left-color: var(--accent-soft); }
+.decoder__opt.is-on { border-left-color: var(--accent); background: var(--accent-wash); }
+
+.decoder__optpali { font-style: italic; font-weight: 500; color: var(--text); font-size: 0.9rem; }
+.decoder__optsi { font-family: var(--font-sinhala); font-size: 0.85rem; color: var(--grow); }
+.decoder__optplain { font-size: 0.8rem; color: var(--text-faint); }
+
+.decoder__num {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--s2);
+}
+:root[data-theme="source"] .decoder__num { color: var(--accent-soft); }
+.decoder__num span { color: var(--text-faint); }
+
+.decoder__name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: var(--text);
+  line-height: 1.35;
+}
+.decoder__si {
+  font-family: var(--font-sinhala);
+  font-size: 0.95rem;
+  color: var(--grow);
+  margin-top: 2px;
+}
+.decoder__plain {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-faint);
+  margin-top: var(--s2);
+}
+.decoder__ex {
+  margin-top: var(--s3);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--line);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+.decoder__note {
+  margin-top: var(--s2);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  line-height: 1.55;
+}
+
+.machine__pex li b { color: var(--text); font-weight: 600; }
+.machine__pex li i { font-family: var(--font-sinhala); font-style: normal; color: var(--grow); }
+
+@media (max-width: 620px) {
+  .decoder__opts { grid-template-columns: 1fr; }
+}

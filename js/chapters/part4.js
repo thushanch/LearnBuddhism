@@ -255,9 +255,98 @@ export const limits = {
   ],
 };
 
+export const cittas = {
+  id: "cittas",
+  num: "14",
+  group: "The fine grain",
+  title: "Eighty-nine kinds of mind",
+  pali: "citta — consciousness",
+  si: "සිත් වර්ග",
+  blocks: [
+    ["lead",
+      "The Abhidhamma sorts consciousness into eighty-nine types. Counted the long way it is a hundred and twenty-one. It reads like a list to memorise, and it is not — it is a specification, and the count is what the specification produces."],
+
+    ["h", "What a citta is"],
+
+    ["p",
+      "One moment of consciousness knowing one object. Not a mind, not a mood, not a personality — a single event, which arises, does its work and passes, and conditions the one after it. The seventeen boxes on [the micro board](#/micro) are seventeen cittas in a row."],
+
+    ["p",
+      "And only ever one at a time. Whatever it feels like when you are holding a conversation while driving while worrying about something, the analysis says there is one citta, then another, then another, fast enough that the sequence reads as simultaneity."],
+
+    ["h", "A citta never arises bare"],
+
+    ["map", [
+      ["citta", "*the knowing itself.* Bare awareness of an object — and there is only one kind of that"],
+      ["cetasika", "*the factors that colour it.* Fifty-two of them, arriving in fixed combinations"],
+    ]],
+
+    ["p",
+      "So the eighty-nine are not eighty-nine different kinds of knowing. They are one kind of knowing in eighty-nine different accompaniments. Seven of the fifty-two factors are in every citta without exception — contact, feeling, perception, intention, one-pointedness, life faculty, attention. Remove any one and there is no consciousness of anything at all."],
+
+    ["h", "Where the number comes from"],
+
+    ["code",
+      `kāmāvacara   sense sphere       54
+rūpāvacara   fine-material      15    // 5 jhānas × 3 modes
+arūpāvacara  immaterial         12    // 4 attainments × 3 modes
+lokuttara    supramundane        8    // 4 paths + 4 fruits
+                                ---
+                                 89
+
+// counted against the 5 jhāna factors, the 8 supramundane become 40
+// 81 + 40 = 121`],
+
+    ["p",
+      "The 54 you spend your life in break down further, and the shape of the breakdown is the interesting part:"],
+
+    ["map", [
+      ["akusala 12", "*unwholesome* — greed-rooted 8, hatred-rooted 2, delusion-rooted 2"],
+      ["ahetuka 18", "*rootless* — no greed, no hatred, and no wholesome root either. Seeing, hearing, receiving, examining. Most of a cognitive series is made of these"],
+      ["sobhana 24", "*beautiful* — wholesome 8, their results 8, and the same eight again as merely functional 8"],
+    ]],
+
+    ["h", "The eight that give the game away"],
+
+    ["p",
+      "The greed-rooted cittas number eight. Not because anyone found eight of them — because there are three binary fields, and two cubed is eight:"],
+
+    ["code",
+      `feeling    somanassa (joy)            | upekkhā (equanimity)
+view       diṭṭhigata-sampayutta      | vippayutta      // with or without wrong view
+prompting  asaṅkhārika                | sasaṅkhārika    // spontaneous or urged
+
+2 × 2 × 2 = 8`],
+
+    ["p",
+      "And the eight wholesome cittas have exactly the same shape with one field swapped: *wrong view* becomes *knowledge*. The symmetry is not decorative. It is saying that the wholesome and unwholesome sides of the mind are built from the same parts, differing in one bit."],
+
+    ["p",
+      "[The board](#/cittas) lets you set the three switches and watch the citta get named. It is worth doing a few times — the moment the pattern lands, the whole list stops being something to memorise."],
+
+    ["h", "The other cut: what a citta is for"],
+
+    ["map", [
+      ["kusala", "*wholesome* — makes kamma, in the good direction"],
+      ["akusala", "*unwholesome* — makes kamma, in the other one"],
+      ["vipāka", "*resultant* — the fruit of kamma already made. Makes none itself"],
+      ["kiriya", "*functional* — does its job and writes nothing. An arahant's actions are these"],
+    ]],
+
+    ["p",
+      "This is the cut that matters practically, and it is the one [the micro board](#/micro) is colour-coded by. Of the seventeen moments in a full cognitive series, seven are javana and make kamma. The other ten are resultant or functional. Which means the karmically active fraction of an ordinary act of seeing is under half."],
+
+    ["note", "Why there are functional twins of everything",
+      "An arahant still sees, still decides, still acts, still smiles. What has stopped is the writing — the same citta that would be wholesome in anyone else is merely functional in them, because there is no craving left for it to feed. The existence of the kiriya set is the Abhidhamma's way of saying that ending the loop does not end the person."],
+
+    ["warn", "The layer this is on",
+      "None of this counting is in the suttas. The Abhidhammattha Saṅgaha is a systematising manual from many centuries later, Theravāda holds it, and other traditions analyse mind quite differently. It is a very carefully built model. It is not a transcript, and chapter 13 applies to it in full."],
+  ],
+};
+
 export const glossary = {
   id: "glossary",
-  num: "14",
+  num: "15",
   group: "Reference",
   title: "Term map",
   pali: "pāli to systems, in one place",

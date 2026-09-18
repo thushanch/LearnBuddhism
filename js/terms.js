@@ -220,3 +220,69 @@ export const ICON_FOR = {
   "bhavaṅga": "bhavanga", "javana": "javana", "votthapana": "gap",
   "yoniso manasikāra": "observer",
 };
+
+/* The citta classification. Same layer as the micro board: Abhidhamma and
+   commentary, not sutta. */
+TERMS.push(
+  ["citta", "what knows", "one moment of consciousness",
+   "A single event of knowing an object. One at a time, arising and passing. Eighty-nine types, or a hundred and twenty-one counted the long way."],
+
+  ["cetasika", "belonging to mind", "the accompanying factors",
+   "Fifty-two mental factors that colour a citta. Seven are in every citta without exception; the rest arrive in fixed combinations."],
+
+  ["kusala", "skilful, wholesome", "writes, in the good direction",
+   "A citta that makes kamma toward the wholesome. One of the four functional kinds."],
+
+  ["akusala", "unskilful", "writes, in the other direction",
+   "Rooted in greed, hatred or delusion. Twelve of them, and they only ever occur at the javana stage."],
+
+  ["vipāka", "ripening", "resultant — makes none itself",
+   "The fruit of kamma already made. Seeing and hearing are these, which is why you cannot be praised or blamed for them."],
+
+  ["kiriya", "functional", "runs and writes nothing",
+   "Does its job and leaves no trace. An arahant's actions are these — the loop keeps running and stops being fed."],
+
+  ["kāmāvacara", "of the sense sphere", "the ordinary set",
+   "The 54 cittas of ordinary experience: 12 unwholesome, 18 rootless, 24 beautiful."],
+
+  ["lokuttara", "beyond the world", "path and fruition",
+   "Eight cittas — four paths and four fruits. Counted against the five jhāna factors they become forty, which is how 89 becomes 121."],
+
+  ["somanassa", "gladness of mind", "the joy flag",
+   "One value of the feeling field in a citta. Its opposite here is not sadness but upekkhā — neutrality."],
+
+  ["upekkhā", "looking on", "the neutral flag",
+   "Equanimity. As a feeling it is neutral; as a quality developed on the path it is something much stronger than indifference."],
+
+  ["asaṅkhārika", "unprompted", "fired without urging",
+   "A citta that arises spontaneously rather than after encouragement. Held to be the stronger of the pair, for better or worse."],
+
+  ["jhāna", "absorption", "a stable deep state",
+   "Five of them in the Abhidhamma scheme, four in the sutta scheme. Instruments, not achievements."],
+
+  ["sotāpanna", "stream-enterer", "first exit condition met",
+   "The first of four stages. Certain fetters are gone and cannot return, and the process is now bounded rather than open-ended."],
+);
+
+Object.assign(SI, {
+  "citta": "සිත",
+  "cetasika": "චෛතසික",
+  "kusala": "කුසල",
+  "akusala": "අකුසල",
+  "vipāka": "විපාක",
+  "kiriya": "ක්‍රියා",
+  "kāmāvacara": "කාමාවචර",
+  "lokuttara": "ලෝකෝත්තර",
+  "somanassa": "සෝමනස්ස",
+  "upekkhā": "උපේක්ඛා",
+  "asaṅkhārika": "අසංඛාරික",
+  "jhāna": "ධ්‍යාන",
+  "sotāpanna": "සෝවාන්",
+});
+
+Object.assign(ICON_FOR, {
+  "citta": "citta", "cetasika": "kalapa", "kusala": "magga", "akusala": "roots",
+  "vipāka": "loop", "kiriya": "gear", "kāmāvacara": "khandha",
+  "lokuttara": "exit", "somanassa": "feeling", "upekkhā": "marks",
+  "asaṅkhārika": "javana", "jhāna": "practice", "sotāpanna": "exit",
+});

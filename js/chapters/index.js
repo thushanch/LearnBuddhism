@@ -5,7 +5,7 @@
 import { start, loop, report, marks } from "./part1.js";
 import { khandha, senses, chain } from "./part2.js";
 import { gap, karma, roots } from "./part3.js";
-import { path, practice, exit, limits, glossary } from "./part4.js";
+import { path, practice, exit, limits, cittas, glossary } from "./part4.js";
 
 export const CHAPTERS = [
   start,
@@ -22,6 +22,7 @@ export const CHAPTERS = [
   practice,
   exit,
   limits,
+  cittas,
   glossary,
 ];
 
