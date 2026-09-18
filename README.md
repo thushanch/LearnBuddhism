@@ -125,3 +125,13 @@ so at length.
 Where the traditions disagree, the site says so rather than picking a side. Where the
 English translation of a term is misleading, the Pali is given and the mistranslation is
 named.
+
+---
+
+## Deploying
+
+`.github/workflows/pages.yml` publishes the site to GitHub Pages, but it is
+**manual-only** and Pages is not yet enabled here — a private repository needs a paid
+plan to serve Pages. To publish: either make the repo public or upgrade the plan, set
+*Settings → Pages → Source* to **GitHub Actions**, then run the workflow from the
+Actions tab. Nothing needs to be built; the artifact is the repository as-is.
