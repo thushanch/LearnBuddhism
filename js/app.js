@@ -8,6 +8,7 @@ import { initDiagrams } from "./diagrams.js";
 import { machineView, wireMachine } from "./machine.js";
 import { microView, wireMicro } from "./micro.js";
 import { cittasView, wireCittas } from "./cittas.js";
+import { kammaView, wireKamma } from "./kamma.js";
 
 const main = document.getElementById("main");
 const railLinks = document.getElementById("railLinks");
@@ -50,9 +51,13 @@ function buildRail() {
       <span class="rail__num">&#9642;</span>
       <span>Underneath the board</span>
     </a>
-    <a class="rail__link" href="#/cittas" data-id="cittas-board">
+    <a class="rail__link" href="#/cittas-board" data-id="cittas-board">
       <span class="rail__num">&#9642;</span>
       <span>සිත් වර්ග · the eighty-nine</span>
+    </a>
+    <a class="rail__link" href="#/kamma-board" data-id="kamma-board">
+      <span class="rail__num">&#9642;</span>
+      <span>පින් · පව් · විපාක · මරණය</span>
     </a>`;
 
   railLinks.innerHTML = boardLink + grouped()
@@ -106,12 +111,44 @@ function homeView() {
         <p class="home__kicker reveal">a systems reading of early buddhism</p>
         <h1 class="home__h1 reveal">The whole thing is one machine.</h1>
         <p class="home__sub reveal">
-          Not fifteen separate doctrines — one process, with six inputs, a short
-          pipeline, a loop that closes on itself, and exactly one branch out.
-          Here it is on a single board. Click any block to see what it is, then
-          read the chapter behind it.
+          Not a set of separate doctrines — one process, with six ways in, a short
+          chain of steps, a loop that closes on itself, and exactly one way out.
+          Here it is on a single board.
         </p>
       </header>
+
+      <div class="howto reveal">
+        <div class="howto__head">
+          <span class="howto__t">How to read this board</span>
+          <span class="howto__si">මෙය කියවන ආකාරය</span>
+        </div>
+        <ol class="howto__steps">
+          <li>
+            <b>Start at the left.</b> Six ways the world gets in — eye, ear, nose,
+            tongue, body, and mind. Mind is one of the six, not the boss of them.
+          </li>
+          <li>
+            <b>Follow the blue line.</b> That is one moment, travelling. It goes
+            right across the top, turns down, comes back along the bottom, and
+            arrives where it started. Nothing pushes it. Each turn makes the fuel
+            for the next.
+          </li>
+          <li>
+            <b>Stop at the dashed green box.</b> <i>The gap.</i> Every other joint
+            on the board is welded shut. This is the only one with any give in it,
+            and the whole teaching is about that one gap.
+          </li>
+          <li>
+            <b>Then press a button.</b> Run a scenario and watch one ordinary
+            moment take the whole trip. Then attach the observer and run the same
+            one again — it stops at the gap instead of going round.
+          </li>
+        </ol>
+        <p class="howto__foot">
+          Every block is clickable, and each one gives you the Pali, the Sinhala,
+          plain English, and a few everyday examples.
+        </p>
+      </div>
 
       ${machineView()}
 
@@ -121,6 +158,34 @@ function homeView() {
           Fifteen chapters, eleven diagrams, forty terms mapped. Chapter 13 is a
           full audit of everywhere this computer metaphor misleads — read that
           one before you repeat any of the rest.
+        </p>
+      </div>
+    </section>`;
+}
+
+function kammaPage() {
+  return `
+    <section class="microwrap">
+      <header class="home__head">
+        <p class="home__kicker reveal">the everyday frame</p>
+        <h1 class="home__h1 reveal">පින්, පව්, විපාක, මරණය.</h1>
+        <p class="home__sub reveal">
+          Merit, demerit, what comes of them, and what happens at the end. This is
+          the layer most people actually grew up with, and it is almost always
+          taught as a moral ledger with someone keeping score. It is not one — and
+          the machinery underneath is more interesting than the ledger.
+        </p>
+      </header>
+
+      ${kammaView()}
+
+      <div class="home__foot reveal">
+        <a class="home__cta" href="#/karma">Read the chapter on kamma <span aria-hidden="true">&rarr;</span></a>
+        <a class="machine__plink" href="#/micro">or the series this all runs on &rarr;</a>
+        <p class="home__note">
+          The two lists at the top are sutta material. The classifications and the
+          death process are Abhidhamma and commentary, and the board says so where
+          the line falls.
         </p>
       </div>
     </section>`;
@@ -224,6 +289,10 @@ function route() {
     main.innerHTML = homeView();
     markCurrent("__home");
     document.title = "Escaping the System — Buddhism read as an engineering report";
+  } else if (id === "kamma-board") {
+    main.innerHTML = kammaPage();
+    markCurrent("kamma-board");
+    document.title = "පින් · පව් · විපාක · මරණය — Escaping the System";
   } else if (id === "cittas-board") {
     main.innerHTML = cittasPage();
     markCurrent("cittas-board");
@@ -251,6 +320,8 @@ function route() {
   if (micro) wireMicro(micro);
   const cittas = main.querySelector("[data-cittas]");
   if (cittas) wireCittas(cittas);
+  const kamma = main.querySelector("[data-kamma]");
+  if (kamma) wireKamma(kamma);
   observeReveals(main);
   setRail(false);
   window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });

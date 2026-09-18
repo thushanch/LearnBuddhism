@@ -286,3 +286,61 @@ Object.assign(ICON_FOR, {
   "lokuttara": "exit", "somanassa": "feeling", "upekkhā": "marks",
   "asaṅkhārika": "javana", "jhāna": "practice", "sotāpanna": "exit",
 });
+
+/* පින් · පව් · විපාක · මරණය — the everyday frame. The first two are sutta
+   material; the classifications and the death process are commentarial. */
+TERMS.push(
+  ["puñña", "merit", "improves the position",
+   "Good action and its result. Ten bases in the suttas, and most of them cost nothing. Improves where you land — does not end the process."],
+
+  ["pāpa", "demerit", "the other direction",
+   "Also called apuñña. Ten courses of unwholesome action: three by body, four by speech, three that never leave the mind."],
+
+  ["dāna", "giving", "the first base",
+   "The intention before, during and after all count, and the amount counts least of the three."],
+
+  ["kammapatha", "course of action", "a completed act",
+   "A full course, not a passing impulse. This is why intention that never becomes anything is treated differently from intention that does."],
+
+  ["garuka kamma", "weighty", "takes precedence",
+   "Jhāna attainment on one side, the gravest acts on the other. If one exists, nothing else gets to ripen first."],
+
+  ["āciṇṇa kamma", "habitual", "the default that decides",
+   "What you did repeatedly. In the absence of anything weighty or death-proximate, the habit is what determines the next becoming."],
+
+  ["ahosi kamma", "it was", "lapsed",
+   "Did not get its conditions in time and no longer will. Not forgiven and not cancelled — simply out of time."],
+
+  ["maraṇāsanna javana", "death-proximate impulsion", "the last write",
+   "The final run of impulsion moments — five rather than the usual seven, because the body supporting it is failing."],
+
+  ["cuti citta", "falling-away consciousness", "the last citta",
+   "The final moment of a life. It performs one function, passing away, and makes no kamma at all."],
+
+  ["paṭisandhi citta", "relinking consciousness", "the first citta",
+   "The first moment of the next existence, arising immediately with no interval, taking the same object the last impulsion took."],
+
+  ["gati-nimitta", "sign of destination", "the next state, seen early",
+   "One of three possible objects of the final impulsion, alongside the act itself and a sign associated with it."],
+);
+
+Object.assign(SI, {
+  "puñña": "පින්",
+  "pāpa": "පව්",
+  "dāna": "දාන",
+  "kammapatha": "කම්මපථ",
+  "garuka kamma": "ගරුක කර්ම",
+  "āciṇṇa kamma": "ආචිණ්ණ කර්ම",
+  "ahosi kamma": "අහෝසි කර්ම",
+  "maraṇāsanna javana": "මරණාසන්න ජවන",
+  "cuti citta": "චුති සිත",
+  "paṭisandhi citta": "පටිසන්ධි සිත",
+  "gati-nimitta": "ගති නිමිත්ත",
+});
+
+Object.assign(ICON_FOR, {
+  "puñña": "magga", "pāpa": "roots", "dāna": "karma", "kammapatha": "karma",
+  "garuka kamma": "karma", "āciṇṇa kamma": "store", "ahosi kamma": "decay",
+  "maraṇāsanna javana": "javana", "cuti citta": "exit",
+  "paṭisandhi citta": "birth", "gati-nimitta": "citta",
+});

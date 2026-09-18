@@ -1,0 +1,230 @@
+/* ==========================================================================
+   kamma.css — පින් · පව් · විපාක · මරණය
+   ========================================================================== */
+
+.kamma { margin: 0 0 var(--s7); }
+
+.kx-h {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  color: var(--accent);
+  margin: var(--s8) 0 var(--s3);
+}
+:root[data-theme="source"] .kx-h { color: var(--text); }
+
+.kx-lead { font-size: var(--step-1); line-height: 1.5; color: var(--text-soft); max-width: 68ch; margin-bottom: var(--s5); }
+.kx-lead b { color: var(--text); font-weight: 500; }
+
+.kx-si { font-family: var(--font-sinhala); color: var(--grow); }
+
+/* ---- merit / demerit columns ---- */
+
+.kx-two {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: var(--s5);
+}
+
+.kx-col {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: var(--s5);
+}
+.kx-col--good { border-top: 3px solid var(--grow); }
+.kx-col--bad { border-top: 3px solid var(--accent-soft); }
+
+.kx-chead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s3);
+  flex-wrap: wrap;
+  margin-bottom: var(--s3);
+}
+.kx-chead .ic { width: 18px; height: 18px; color: var(--accent-soft); align-self: center; }
+.kx-col--good .kx-chead .ic { color: var(--grow); }
+.kx-ctitle {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+.kx-cpali { font-style: italic; font-size: 0.85rem; color: var(--text-faint); }
+.kx-cn {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--accent-soft);
+}
+.kx-cnote { font-size: 0.88rem; color: var(--text-faint); margin-bottom: var(--s4); line-height: 1.55; }
+
+.kx-row {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: var(--s3);
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: var(--s3) var(--s2);
+  transition: background-color 0.18s var(--ease);
+}
+.kx-row:last-child { border-bottom: 0; }
+button.kx-row { cursor: pointer; }
+button.kx-row:hover { background: var(--accent-wash); }
+button.kx-row.is-sel { background: var(--accent-wash); box-shadow: inset 2px 0 0 var(--accent); }
+.kx-row--static { cursor: default; }
+
+.kx-n { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-faint); padding-top: 3px; }
+.kx-pali { font-style: italic; font-weight: 500; color: var(--text); font-size: 0.93rem; }
+.kx-row .kx-si { font-size: 0.86rem; margin-left: 0.4rem; }
+.kx-en { display: block; font-size: 0.85rem; color: var(--text-faint); margin-top: 1px; }
+
+.kx-group { margin-bottom: var(--s4); }
+.kx-group:last-child { margin-bottom: 0; }
+.kx-ghead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s2);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: var(--s2) var(--s2);
+  border-bottom: 1px solid var(--line);
+}
+.kx-ghead .kx-si { text-transform: none; letter-spacing: 0; font-size: 0.8rem; }
+.kx-ghead b { margin-left: auto; color: var(--accent-soft); font-weight: 400; }
+
+.kx-src {
+  margin: var(--s5) 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+  border-left: 2px solid var(--line-strong);
+  padding-left: var(--s4);
+  line-height: 1.6;
+}
+
+/* ---- vipāka panels ---- */
+
+.kx-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: var(--s5);
+}
+.kx-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: var(--s5);
+}
+.kx-phead { display: flex; align-items: baseline; gap: var(--s3); flex-wrap: wrap; margin-bottom: var(--s2); }
+.kx-ptitle { font-family: var(--font-display); font-weight: 600; color: var(--text); }
+.kx-ppali { font-style: italic; font-size: 0.85rem; color: var(--text-faint); }
+.kx-pdesc { font-size: 0.87rem; color: var(--text-faint); margin-bottom: var(--s4); line-height: 1.55; }
+
+.kx-items { display: grid; gap: var(--s3); }
+.kx-item {
+  display: grid;
+  gap: 2px;
+  text-align: left;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--s3) var(--s4);
+  transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease);
+}
+.kx-item:hover { border-left-color: var(--accent-soft); }
+.kx-item.is-sel { border-left-color: var(--accent); background: var(--accent-wash); }
+.kx-ipali { font-style: italic; font-weight: 500; color: var(--text); font-size: 0.9rem; }
+.kx-ipali .kx-si { font-size: 0.85rem; margin-left: 0.4rem; }
+.kx-ien {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+.kx-id { font-size: 0.85rem; color: var(--text-soft); line-height: 1.55; margin-top: 2px; }
+
+/* ---- the death track ---- */
+
+.kx-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--s3);
+  margin-bottom: var(--s5);
+}
+.kx-step {
+  display: grid;
+  gap: 2px;
+  padding: var(--s3) var(--s4);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease),
+              transform 0.3s var(--ease-out), opacity 0.3s var(--ease);
+}
+.kx-stepn { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-faint); }
+.kx-stepen { font-family: var(--font-display); font-weight: 500; font-size: 0.88rem; color: var(--text); line-height: 1.25; }
+.kx-steppali { font-style: italic; font-size: 0.8rem; color: var(--text-faint); }
+.kx-stepsi { font-family: var(--font-sinhala); font-size: 0.8rem; color: var(--grow); }
+
+/* The two that matter get their own colour; everything else is neutral. */
+.kx-step--javana { border-top-color: var(--accent-soft); }
+.kx-step--cuti { border-top-color: var(--grow); background: var(--grow-wash); }
+.kx-step--patis { border-top-color: var(--grow); background: var(--grow-wash); }
+
+.kx-step.is-done { opacity: 0.5; }
+.kx-step.is-live {
+  opacity: 1;
+  border-color: var(--accent);
+  border-top-color: var(--accent);
+  background: var(--accent-wash);
+  transform: translateY(-3px);
+}
+.kx-step--cuti.is-live,
+.kx-step--patis.is-live { border-color: var(--grow); border-top-color: var(--grow); background: var(--grow-wash); }
+
+.kx-runhead {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--s2);
+}
+:root[data-theme="source"] .kx-runhead { color: var(--accent-soft); }
+.kx-runhead i { font-style: italic; color: var(--grow); text-transform: none; letter-spacing: 0; }
+.kx-ex { margin-top: var(--s2); color: var(--text-faint); font-style: italic; }
+.kx-hint { margin-top: var(--s2); font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent-soft); }
+
+/* ---- realms ---- */
+
+.kx-realms { display: grid; gap: var(--s3); }
+.kx-realm {
+  display: grid;
+  grid-template-columns: 3rem minmax(8rem, 13rem) minmax(0, 1fr);
+  gap: var(--s4);
+  align-items: baseline;
+  padding: var(--s3) var(--s4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+.kx-realm--total { border-color: var(--accent-line); background: var(--accent-wash); }
+.kx-realmn { font-family: var(--font-mono); font-size: 1.15rem; color: var(--accent-soft); }
+.kx-realmp { font-style: italic; font-weight: 500; color: var(--text); }
+.kx-realmp .kx-si { display: block; font-style: normal; font-size: 0.85rem; }
+.kx-realmd { font-size: 0.88rem; color: var(--text-soft); line-height: 1.55; }
+.kx-realmd b { color: var(--text); }
+
+@media (max-width: 620px) {
+  .kx-realm { grid-template-columns: 1fr; gap: var(--s1); }
+}

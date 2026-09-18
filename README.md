@@ -59,6 +59,21 @@ eight. The eight wholesome cittas have the same shape with one field swapped:
 knowledge in place of wrong view. Set the three switches and watch a citta get
 named in Pali and Sinhala, with an everyday example of what it looks like.
 
+**The පින් · පව් · විපාක · මරණය board** (`#/kamma-board`) — the fourth window, and
+the layer most Sri Lankan readers actually grew up with. The ten bases of merit and
+the ten courses of unwholesome action, sorted by which door they come out of. Then
+the three ways the tradition classifies how kamma ripens — by what it does, by which
+ripens first, and by when — because any given kamma has a value in all three columns
+at once.
+
+Then the death process, run step by step: the last cognitive series with its weaker
+five-moment impulsion, the death consciousness, and the relinking consciousness that
+arises immediately after it with no interval. Pick what the final impulsion takes as
+its object — the act, a sign of the act, or a sign of the destination — and the
+relinking consciousness takes the same one. **Nothing crosses.** That is the whole
+point of the board, and it is what *punabbhava* means: again-becoming, not
+again-being-you.
+
 **Sixteen chapters**, in reading order:
 
 | | Chapter | Pali | Sinhala |
@@ -78,7 +93,7 @@ named in Pali and Sinhala, with an everyday example of what it looks like.
 | 12 | Going out | nibbāna | නිබ්බාන · නිවන |
 | 13 | Where this metaphor breaks | the audit | |
 | 14 | Eighty-nine kinds of mind | citta | සිත් වර්ග |
-| 15 | Term map | 60 terms, searchable in English, Pali or Sinhala | |
+| 15 | Term map | 71 terms, searchable in English, Pali or Sinhala | |
 
 **Three interactive figures** beyond the two boards: the five aggregates (chapter 04), the
 feeling-to-craving pipeline (chapter 07), and the fire that goes out when you cut its
@@ -108,6 +123,7 @@ js/
   machine.js          the main board, its inspector and the simulator
   micro.js            the micro board: kalapa, cittakkhana, citta vithi
   cittas.js           the sith warga board: the 89, the 52, the field decoder
+  kamma.js            merit, demerit, how kamma ripens, and the death process
   icons.js            one line-art glyph per concept, on a 24x24 grid
   render.js           turns chapter block arrays into HTML
   diagrams.js         the eleven chapter figures, plus interactive wiring
@@ -121,6 +137,7 @@ styles/
   machine.css         the main board, the simulator, Sinhala and icon styling
   micro.css           the micro board
   cittas.css          the sith warga board and its decoder
+  kamma.css           the merit / demerit / vipaka / death board
 icons/                generated contour textures
 brand/                mark and wordmarks
 tools/serve.mjs       zero-dependency static server

@@ -471,3 +471,64 @@
     color: var(--text-faint);
   }
 }
+
+/* ==========================================================================
+   How to read the board — the first thing a newcomer needs
+   ========================================================================== */
+
+.howto {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--grow);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--surface);
+  padding: var(--s5) var(--s6);
+  margin-bottom: var(--s5);
+}
+.howto__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s3);
+  flex-wrap: wrap;
+  margin-bottom: var(--s4);
+}
+.howto__t { font-family: var(--font-display); font-weight: 600; color: var(--text); font-size: 1.02rem; }
+.howto__si { font-family: var(--font-sinhala); font-size: 0.92rem; color: var(--grow); }
+
+.howto__steps {
+  list-style: none;
+  counter-reset: howto;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: var(--s5);
+  max-width: none;
+}
+.howto__steps li {
+  counter-increment: howto;
+  position: relative;
+  padding-left: 2.2rem;
+  margin: 0;
+  font-size: 0.93rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+.howto__steps li::before {
+  content: counter(howto, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-soft);
+}
+.howto__steps b { color: var(--text); font-weight: 600; }
+.howto__steps i { font-style: italic; color: var(--grow); }
+.howto__foot {
+  margin: var(--s5) 0 0;
+  padding-top: var(--s4);
+  border-top: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--text-faint);
+  max-width: none;
+}
